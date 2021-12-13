@@ -1,4 +1,4 @@
-function [trainset, testset] = spilt(dataPath, spiltPercentage)
+function [trainset, testset] = spilt(dataPath, spiltPercentage, random)
     sprint("Dataset Spilting...");
 
     % read dataset
