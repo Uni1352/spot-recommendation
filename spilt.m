@@ -20,10 +20,11 @@ function [trainset, testset] = spilt(dataPath, spiltPercentage, random)
         start = last + 1
     end
 
-    writematrix(trainsetIndex, 'trainset.csv')
     trainset = ratings(trainsetIndex, :)
     ratings(trainsetIndex, :) = []
     testset = ratings
+
+    writematrix(trainsetIndex, 'trainset.csv')
     writematrix(trainset, 'train.csv')
     writematrix(testset, 'test.csv')
 end
