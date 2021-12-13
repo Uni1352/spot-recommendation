@@ -32,4 +32,6 @@ function [trainset, testset] = spilt(dataPath, spiltPercentage)
 
     end
 
+    sprint("Dataset Spilted!")
+
 end
