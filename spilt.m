@@ -4,7 +4,7 @@ function [trainset, testset] = spilt(dataPath, spiltPercentage)
     % read dataset
     fileId = fopen(dataPath, "r");
     % ratings = textscan(fileId, "%d%s%f", "Delimeter", ",", "HeaderLines", 1);
-    [userId, spotId, rate] = textscan(fileId, "%d%s%f", "Delimeter", ",", "HeaderLines", 1);
+    [userId, spots, rate] = textscan(fileId, "%d%s%f", "Delimeter", ",", "HeaderLines", 1);
     fclose(fileId);
 
     % spilt dataset to training set & testing set
@@ -13,12 +13,12 @@ function [trainset, testset] = spilt(dataPath, spiltPercentage)
     userIds = unique(userId);
     start = 1; % 起始索引值
 
-    for user = userIds
-        last = find(userId, user, "last");
+    for id = userIds
+        last = find(userId == id, 1, "last");
         pos = round((last - start + 1) * spiltPercentage); % 資料分割點
         currentIndex = start; % 目前索引值
 
-        for spot = spotId(start:last)
+        for spot = spots(start:last)
 
             if currentIndex <= pos
                 trainset(user, spot) = rate(currentIndex);
