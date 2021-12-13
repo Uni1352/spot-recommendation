@@ -14,6 +14,7 @@ Model-based Collaborative Filtering: Baseline
 ## Files
 
 - spilt.m: 資料切割
+  - 每個使用者的資料都分成訓練部分與測試部分：8:2
 - model.m: 模型
 - sgd.m: SGD 演算法
 - als.m: ALS 演算法
