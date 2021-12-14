@@ -1,4 +1,4 @@
-function model(dataset)
+function [globalMeanRate, userIds, spotIds, bu, bi] = model(dataset)
     globalMeanRate = sum(dataset(:, 3)) / length(dataset(:, 3)) % global mean rate
     userIds = unique(str2double(dataset(:, 1))) % all users
     spotIds = unique((dataset(:, 2))) % all spot

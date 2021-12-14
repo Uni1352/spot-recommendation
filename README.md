@@ -21,3 +21,4 @@ Model-based Collaborative Filtering: Baseline
 - predict.m: 評分預測
 - recommend.m: 景點推薦
 - accuracy.m: 準確性評估
+- test.m: 模型測試
